@@ -56,7 +56,7 @@ output := bytes.NewBuffer(nil)
 t.OutputStream.Consume(output)
 
 // Run the task and check the status
-if err := t.Run(); err != nil || t.Status == task.StatusErr {
+if err := t.Run(); err != nil || t.IsError() {
     panic("failed to trim the string")
 }
 
