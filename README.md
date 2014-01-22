@@ -53,7 +53,7 @@ t.InputStream.Set(strings.NewReader("  padded  "))
 
 // Collect the output
 output := bytes.NewBuffer(nil)
-t.OutputStream.Tail(output)
+t.OutputStream.Consume(output)
 
 // Run the task and check the status
 if err := t.Run(); err != nil || t.Status == task.StatusErr {
