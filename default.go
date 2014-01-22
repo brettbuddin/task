@@ -25,14 +25,5 @@ func Define(name string, handler Handler) {
 // New creates a new Task using a Handler defined
 // in the default Container.
 func New(name string, args ...string) *Task {
-	task := &Task{
-		Handler:      DefaultContainer().Handler(name),
-		Name:         name,
-		Args:         args,
-		InputStream:  &InputStream{},
-		OutputStream: &OutputStream{},
-		ErrorStream:  &OutputStream{},
-	}
-
-	return task
+    return DefaultContainer().NewTask(name, args...)
 }
