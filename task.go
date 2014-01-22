@@ -39,11 +39,11 @@ func (t *Task) HasArgs() bool {
 }
 
 func (t *Task) IsOk() bool {
-    return t.Status == StatusOk
+	return t.Status == StatusOk
 }
 
 func (t *Task) IsError() bool {
-    return t.Status == StatusErr
+	return t.Status == StatusErr
 }
 
 // Run executes the Task. Start/Stop time of the process are captured
